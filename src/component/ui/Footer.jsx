@@ -5,12 +5,12 @@ function Footer() {
         {
             id: 1,
             text: "ارائه بهترین خدمات",
-            image: "/public/footer-pro/trust.png"
+            image: "/footer-pro/trust.png"
         },
         {
             id: 2,
             text: "ارسال سریع به سراسر ایران",
-            image: "/public/footer-pro/1.png"
+            image: "/footer-pro/1.png"
         },
         {
             id: 3,
@@ -25,7 +25,7 @@ function Footer() {
         {
             id: 5,
             text: "ضمانت اصالت کالا",
-            image: "/public/footer-pro/guarantee.png"
+            image: "/footer-pro/guarantee.png"
         }
     ];
 
@@ -89,10 +89,10 @@ function Footer() {
         },
     ];
 
-    const img_last_section=[
-        {id:1,img:"/public/footer-pro/zibal.png"},
-        {id:2,img:"/public/footer-pro/neshan.png"},
-        {id:3,img:""},
+    const img_last_section = [
+        { id: 1, img: "/footer-pro/zibal.png" },
+        { id: 2, img: "/footer-pro/neshan.png" },
+        { id: 3, img: "/footer-pro/electro.png" },
     ]
 
     return (
@@ -140,10 +140,25 @@ function Footer() {
                         <Icon name="logo" />
                     </div>
                 </div>
-                <div className="w-full flex bg-lime-900">
+                <div className="w-full flex">
                     <hr className="w-[80%] mb-7 mt-10" />
                     <p className="ml-11 text-[32px]">درباره<span className="text-[#F0C400]"> آکو اسپورت</span></p>
-
+                </div>
+                <div className="w-full flex justify-evenly items-center">
+                    <div className="w-[30%] flex justify-between">
+                        {img_last_section.map((item) => (
+                            <>
+                                <img src={item.img} alt="" className="transition-transform hover:scale-105 cursor-pointer" />
+                            </>
+                        ))}
+                    </div>
+                    <div className="w-[56%] flex justify-start rtl m-4">
+                        <p className="text-[24px] cursor-default">فروشگاه آکو اسپرت افتخار عرضه حضوری و مجازی محصولات متنوع کوهنوردی طبیعت گردی و لوازم آفرود با قیمت بسیار مناسب کیفیت مطلوب و فراهم سازی بستری مطمئن جهت خرید آسان و با رضایت و اطمینان خاطر کامل مشتریان عزیز این مجموعه را در کارنامه خود دارد.</p>
+                    </div>
+                </div>
+                <hr className="w-[100%] mb-7 mt-10" />
+                <div className="w-full flex justify-center">
+                    <p className="text-[30px] rtl text-[#FFFFFFB2] mb-3">تمامی حقوق برای Ako Sport محفوظ است.</p>
                 </div>
             </div>
         </>
