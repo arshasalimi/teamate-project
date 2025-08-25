@@ -1,4 +1,5 @@
 import Icon from "../component/ui/Icon/Icon"
+import ProductsApiPage from "./ProductsApiPage";
 function ProductPage() {
 
     return (
@@ -25,6 +26,9 @@ function ProductPage() {
                     </div>
                 </div>
                     <hr className="w-[77%] mb-2 border-2 border-[#00000066] rounded-[2px]" />
+            </div>
+            <div>
+                <ProductsApiPage />
             </div>
         </>
     )
