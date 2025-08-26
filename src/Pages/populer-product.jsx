@@ -7,36 +7,28 @@ export default function Populer() {
     console.log(product);
 
     useEffect(() => {
-        console.log(Api)
-        Api.get("/products?limit=6")
+        Api.get("/products?limit=200")
             .then(res => setProduct(res.data.products))
         console.log(product)
     }, [])
 
     return (
-        <section className="w-[90%] ml-[20px] mb-8 text-center">
-            <h2 className="text-[40px]  ml-[90px] mb-14">محصولات محبوب</h2>
-
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-[5%] w-[100%]  ml-[50px] justify-around cursor-pointer">
-                {product.map((product) => (
-                    <div key={product.id} className="flex flex-col items-center text-center">
-
-                        <div className="w-[100%] aspect-square rounded-full overflow-hidden flex items-center justify-center bg-gray-100 shadow-lg">
-                            <img
-                                src={product.images}
-                                alt={product.title}
-                                className="w-[90%] h-[90%]"
-                            />
+        <div className="w-[90%] mb-8 text-center ml-[115px] ">
+            <p className="text-[40px] mb-14 mr-24">محصولات محبوب</p>
+            <div className="flex justify-around gap-[3%] w-[95%] items-start cursor-pointer">
+                {product
+                 .filter(item => item.id >= 148 && item.id <= 153)
+                .map((item) => (
+                    <div key={item.id} className="flex flex-col justify-between items-center text-center transition-transform hover:scale-105 ">
+                        <div className="w-[99%] aspect-square rounded-full flex items-center justify-center bg-[#00424F59] shadow-xl">
+                            <img src={item.images} alt={item.title} className="w-[100%] h-[100%]"/>
                         </div>
-
-
                         <p className="text-[18px] mt-3">
-                            {product.title}
+                            {item.title}
                         </p>
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
     );
 }
