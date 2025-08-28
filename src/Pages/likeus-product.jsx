@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Api from "../Services/api";
 import Icon from "../component/ui/Icon/Icon";
-import { Link } from "react-router";
 
-
-function NewProduct() {
+function LikeUs() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -14,16 +12,13 @@ function NewProduct() {
 
     return (
         <div className="mb-44 p-6">
-            <p className=" text-right text-[40px]  mr-[90px] mb-[52px]">جدیدترین محصولات</p>
-            <div className="text-left text-[25px]  ml-[90px] mb-[50px] mt-[-92px] text-[#000000CC] cursor-pointer">
-                <Link to={"/products"}>بیشتر</Link>
-            </div>
+            <p className="text-[40px] mb-14 ml-5 flex justify-center">محصولات مشابه</p>
             <div className="flex gap-6 flex-wrap justify-center">
                 {products
-                    .filter(item => item.id >= 107 && item.id <= 111)
+                    .slice(65,70)
                     .map((item) => (
 
-                        <Link to={"/productdetail"} key={item.id} className="border rounded-[13px] w-60 flex flex-col items-start p-2 justify-between shadow-xl transition-transform hover:scale-105">
+                        <div key={item.id} className="border rounded-[13px] w-60 flex flex-col items-start p-2 justify-between shadow-xl transition-transform hover:scale-105">
                             <div className="">
                                 <img
                                     src={item.images}
@@ -40,11 +35,11 @@ function NewProduct() {
                                     <Icon name={"add-to-box"} />
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     ))}
             </div>
         </div>
     );
 }
 
-export default NewProduct;
+export default LikeUs;

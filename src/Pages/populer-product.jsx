@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Api from "../Services/api";
 
+
 export default function Populer() {
     const [product, setProduct] = useState([])
     console.log(product);

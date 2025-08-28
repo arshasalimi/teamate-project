@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Icon from "../component/ui/Icon/Icon";
-// px-4 py-1 w-[66px] h-[60px] border rounded-md
+
 
 
 export default function ProductCard() {
