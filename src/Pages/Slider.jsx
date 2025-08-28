@@ -4,6 +4,7 @@ import Api from "../Services/api";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 
 export default function SwiperSlide1() {
@@ -50,7 +51,7 @@ export default function SwiperSlide1() {
                         .map((item) => (
                             <SwiperSlide className="bg-white border cursor-pointer  rounded-[13px] w-[23%] h-[20%] ml-16 flex flex-col items-start p-2 justify-between shadow-xl transition-transform hover:scale-105">
 
-                                <div key={item.id} className="">
+                                <Link to={"/products"} key={item.id} className="">
 
                                     <div className="">
                                         <img
@@ -71,12 +72,12 @@ export default function SwiperSlide1() {
                                                 {item.discountPercentage} دلار
                                             </p>
                                         </div>
-                                        <div className=" text-white px-4 py-2 rounded-lg hover:bg-orange-400 cursor-pointer ml=[50px]">
+                                        <div className=" text-white px-4 py-2 rounded-lg hover:bg-orange-300 cursor-pointer ml=[50px]">
                                             <Icon name={"add-to-box"} />
                                         </div>
                                     </div>
 
-                                </div>
+                                </Link>
                             </SwiperSlide>
                         ))}
                 </Swiper>

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Api from "../Services/api";
 import Icon from "../component/ui/Icon/Icon";
-import { Link } from "react-router";
-
+import {  NavLink } from "react-router-dom";
 
 function TopSells() {
     const [products, setProducts] = useState([]);
@@ -16,7 +15,7 @@ function TopSells() {
         <div className="mb-44 p-6">
             <p className=" text-right text-[40px]  mr-[90px] mb-[52px]"> پر فروش ترین محصولات</p> 
             <div className="text-left text-[25px]  ml-[90px] mb-[50px] mt-[-92px] text-[#000000CC] cursor-pointer">
-            <Link to={"/products"}>بیشتر</Link>
+            <NavLink to={"/products"}>بیشتر</NavLink>
 
             </div>
             <div className="flex gap-6 flex-wrap justify-center">
@@ -24,7 +23,7 @@ function TopSells() {
                     .slice(110,115)
                     .map((item) => (
 
-                        <div key={item.id} className="border rounded-[13px] w-60 flex flex-col items-start p-2 justify-between shadow-xl transition-transform hover:scale-105">
+                        <NavLink to={"/productdetail"} key={item.id} className="border rounded-[13px] w-60 flex flex-col items-start p-2 justify-between shadow-xl transition-transform hover:scale-105">
                             <div className="">
                                 <img
                                     src={item.images}
@@ -41,7 +40,7 @@ function TopSells() {
                                     <Icon name={"add-to-box"} />
                                 </div>
                             </div>
-                        </div>
+                        </NavLink>
                     ))}
             </div>
         </div>

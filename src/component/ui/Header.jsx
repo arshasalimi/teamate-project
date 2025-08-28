@@ -1,5 +1,5 @@
 import Icon from "./Icon/Icon";
-
+import {  NavLink } from "react-router-dom";
 export default function Header() {
 
   return (
@@ -10,12 +10,12 @@ export default function Header() {
       </div>
 
 
-      <navbar className="flex items-center  gap-8 text-gray-700 text-base ml-96 ">
-        <a href="#" className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">صفحه اصلی</a>
-        <a href="#" className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">محصولات</a>
-        <a href="#" className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">فروش ویژه</a>
-        <a href="#" className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">درباره ما</a>
-      </navbar>
+      <div className="flex items-center  gap-8 text-gray-700 text-base ml-96 ">
+        <NavLink to={"/"} className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">صفحه اصلی</NavLink>
+        <NavLink to={"/products"} className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">محصولات</NavLink>
+        <NavLink to={"/products"} className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">فروش ویژه</NavLink>
+        <NavLink className="hover:text-orange-500 text-[22px] transition-transform hover:scale-x-105">درباره ما</NavLink>
+      </div>
 
 
       <div className="flex items-center gap-5">
@@ -25,9 +25,9 @@ export default function Header() {
         </button>
 
 
-        <div className="ml-20 -mr-12 w-5 transition-transform hover:scale-x-105">
+        <NavLink to={"/"} className="ml-20 -mr-12 w-5 transition-transform hover:scale-x-105">
           <Icon name={"shop-box"} />
-        </div>
+        </NavLink>
       </div>
 
     </header>
