@@ -14,9 +14,7 @@ function LikeUs() {
         <div className="mb-44 p-6">
             <p className="text-[40px] mb-14 ml-5 flex justify-center">محصولات مشابه</p>
             <div className="flex gap-6 flex-wrap justify-center">
-                {products
-                    .slice(65,70)
-                    .map((item) => (
+                {products.slice(65,70).map((item) => (
 
                         <div key={item.id} className="border rounded-[13px] w-60 flex flex-col items-start p-2 justify-between shadow-xl transition-transform hover:scale-105">
                             <div className="">
